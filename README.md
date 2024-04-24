@@ -1,20 +1,22 @@
 # BDA-A3
 
-
 ---
 
 Kafka to MongoDB Integration Using Apriori & PCY Algorithm
 
 This repository contains source code for a project that utilizes Apache Kafka for data ingestion and MongoDB for storing results processed by the Apriori algorithm. The project serves as an exemplary implementation for real-time data processing and frequent itemset mining in a distributed environment.
 
-## Dependencies
+### Dependencies
 - Python 3.x (install from [official site](https://www.python.org/downloads/))
 - Kafka (setup instructions available on [Apache Kafka](https://kafka.apache.org/documentation/))
 - MongoDB (installation guide at [MongoDB](https://www.mongodb.com/try/download/community))
 
+---
 
-## Introduction
+### Introduction
 The project is designed to demonstrate a seamless flow of data from Kafka to MongoDB through the implementation of the Apriori algorithm to mine frequent itemsets. It highlights the capability of handling large-scale data in real-time and efficiently storing the computed results for further analysis.
+
+---
 
 ### Files 
 - *preprocessor.py*: Preprocesses the initial data.
@@ -24,21 +26,27 @@ The project is designed to demonstrate a seamless flow of data from Kafka to Mon
 - *Kafka Consumer (Custom Implementation)*: Processes the streamed data to compute frequent itemsets.
 - *MongoDB*: Stores the results of the data processing, allowing for efficient retrieval and storage of large volumes of itemset data.
 
-## Usage
+---
 
-- *producer.py*: Reads data from dataset.json and sends each entry to the Kafka topic.
+### Usage
 
-- *apriori.py*: Consumes messages from Kafka, applies the Apriori algorithm to find frequent itemsets, and stores the sets, set number and the frequency count as results in MongoDB.
-- *pcy.py*: Consumes messages from Kafka, applies the Sliding PCY algorithm to find frequent itemsets, and stores the results in MongoDB.
-- *custom.py*: —
+- `producer.py`: Reads data from dataset.json and sends each entry to the Kafka topic.
 
-### Execution Instructions
+- `consumer1.py`: Consumes messages from Kafka, applies the Apriori algorithm to find frequent itemsets, and stores the sets, set number and the frequency count as results in MongoDB.
+- `consumer2.py`: Consumes messages from Kafka, applies the Sliding PCY algorithm to find frequent itemsets, and stores the results in MongoDB.
+- `consumer3.py`: Consumes messages from Kafka, applies SON algorithm to find frequent itemsets, and stores the results in MongoDB.
+- `bash.sh`: A simple start up file automatically starts the kafka servers and runs producer and consumers.
+
+---
+
+### Execution Instructions (Manually)
+
 1. *Start the Kafka Producer*:  
    Run python producer.py to begin data ingestion into Kafka.
 2. *Execute the Kafka Consumer*:  
-   Run python apriori.py to start the consumer process that applies the Apriori algorithm and writes the output to MongoDB.
-   Run python pcy.py to start the consumer process that applies the pcy algorithm and writes the output to MongoDB.
-   Run python custom.py to start the consumer process that applies the custom algorithm and writes the output to MongoDB.
+   Run python consumer1.py to start the consumer process that applies the Apriori algorithm and writes the output to MongoDB.
+   Run python consumer2.py to start the consumer process that applies the pcy algorithm and writes the output to MongoDB.
+   Run python consumer3.py to start the consumer process that applies the custom algorithm and writes the output to MongoDB.
 3. *Activate MongoDB & Open Mongosh*:  
    Activate Mongo by typing sudo systemctl start mongod terminal
    Run Mongosh Terminal by typing mongosh in the terminal
@@ -55,6 +63,12 @@ The project is designed to demonstrate a seamless flow of data from Kafka to Mon
 
 
 ## Contributors
+<<<<<<< Updated upstream
 - *Shazer Nadeem* || i22-2043
 - *Abdullah* || i221879
 - *Saim Nadeem* || i221884
+=======
+- *Abdullah* || i221879@nu.edu.pk
+- *Saim Nadeem* || i221884@nu.edu.pk
+- *Shazer Nadeem* || i222043@nu.edu.pk
+>>>>>>> Stashed changes
