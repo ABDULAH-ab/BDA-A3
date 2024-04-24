@@ -11,7 +11,7 @@ mongo_collection = 'your_collection'
 
 bootstrap_servers = ['localhost:9092']
 topic = 'testtopic8'
-local_path = '/home/hoop/kafka/apriori.txt'
+
 
 # Connect to MongoDB
 client = pymongo.MongoClient(mongo_host, mongo_port)
@@ -22,6 +22,7 @@ consumer = KafkaConsumer(topic, bootstrap_servers=bootstrap_servers,
                          value_deserializer=lambda x: json.loads(x.decode('utf-8')))
 data = []
 item_counts = {}
+item_counts2={}
 single = []
 
 
@@ -35,14 +36,13 @@ for message in consumer:
         
     for item, count in item_counts.items():
 
-        if count > 10:
+        if count >= 10:
             print(f"{item}: {count}")
             single.append(item)
     if(single):
         subsets=[]
         for subset in itertools.combinations(single, 0+2):
             subsets.append(subset)
-        item_counts2={}
         for subset in subsets:
             item_counts2[subset] = item_counts2.get(subset, 0) + 1
         single=[]
@@ -55,14 +55,15 @@ for message in consumer:
         subsets=[]
         for subset in itertools.combinations(single, 0+3):
             subsets.append(subset)
-        item_counts2={}
         for subset in subsets:
             item_counts2[subset] = item_counts2.get(subset, 0) + 1
         shingle=[]
         for item_set, count in item_counts2.items():
             if count >= 10:
                 print(f"{item_set}\t{count}")
+
     collection.insert_one(price_data)
+
 
 
         
