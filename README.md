@@ -62,13 +62,7 @@ The project is designed to demonstrate a seamless flow of data from Kafka to Mon
    Run db.custom.find().pretty() to view the database for the custom consumer
 
 
-## Contributors
-<<<<<<< Updated upstream
-- *Shazer Nadeem* || i22-2043
+### Contributors
 - *Abdullah* || i221879
 - *Saim Nadeem* || i221884
-=======
-- *Abdullah* || i221879@nu.edu.pk
-- *Saim Nadeem* || i221884@nu.edu.pk
-- *Shazer Nadeem* || i222043@nu.edu.pk
->>>>>>> Stashed changes
+- *Shazer Nadeem* || i22-2043
