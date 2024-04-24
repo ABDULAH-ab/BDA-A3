@@ -1,6 +1,5 @@
 # BDA-A3
 
----
 
 Kafka to MongoDB Integration Using Apriori & PCY Algorithm
 
@@ -18,12 +17,12 @@ The project is designed to demonstrate a seamless flow of data from Kafka to Mon
 
 ---
 
-### Files 
-- *preprocessor.py*: Preprocesses the initial data.
-- *Producer.py*: Ingests data into Kafka topics from a JSON formatted file.
-- *Consumer.py (Apriori Implementation)*: Processes the streamed data to compute frequent itemsets using the sliding apriori algorithm
-- *Kafka Consumer (PCY Implementation)*: Processes the streamed data to compute frequent itemsets using the sliding pcy algorithm
-- *Kafka Consumer (Custom Implementation)*: Processes the streamed data to compute frequent itemsets.
+### Files $ DB
+- `pre_processor.py`: Preprocesses the initial data.
+- `Producer.py`: Ingests data into Kafka topics from a JSON formatted file.
+- `consumer1_Apriori.py`: Processes the streamed data to compute frequent itemsets using the sliding apriori algorithm
+- `consumer2_PCY.py`: Processes the streamed data to compute frequent itemsets using the sliding pcy algorithm
+- `consumer3_son.py`: Processes the streamed data to compute frequent itemsets.
 - *MongoDB*: Stores the results of the data processing, allowing for efficient retrieval and storage of large volumes of itemset data.
 
 ---
@@ -32,9 +31,9 @@ The project is designed to demonstrate a seamless flow of data from Kafka to Mon
 
 - `producer.py`: Reads data from dataset.json and sends each entry to the Kafka topic.
 
-- `consumer1.py`: Consumes messages from Kafka, applies the Apriori algorithm to find frequent itemsets, and stores the sets, set number and the frequency count as results in MongoDB.
-- `consumer2.py`: Consumes messages from Kafka, applies the Sliding PCY algorithm to find frequent itemsets, and stores the results in MongoDB.
-- `consumer3.py`: Consumes messages from Kafka, applies SON algorithm to find frequent itemsets, and stores the results in MongoDB.
+- `consumer1_Apriori.py`: Consumes messages from Kafka, applies the Apriori algorithm to find frequent itemsets, and stores the sets, set number and the frequency count as results in MongoDB.
+- `consumer2_PCY.py`: Consumes messages from Kafka, applies the Sliding PCY algorithm to find frequent itemsets, and stores the results in MongoDB.
+- `consumer3_son.py`: Consumes messages from Kafka, applies SON algorithm to find frequent itemsets, and stores the results in MongoDB.
 - `bash.sh`: A simple start up file automatically starts the kafka servers and runs producer and consumers.
 
 ---
@@ -65,4 +64,4 @@ The project is designed to demonstrate a seamless flow of data from Kafka to Mon
 ### Contributors
 - *Abdullah* || i221879
 - *Saim Nadeem* || i221884
-- *Shazer Nadeem* || i22-2043
+- *Shazer Nadeem* || i222043
