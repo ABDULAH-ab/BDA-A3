@@ -17,7 +17,7 @@ The project is designed to demonstrate a seamless flow of data from Kafka to Mon
 
 ---
 
-### Files $ DB
+### Files & DB
 - `pre_processor.py`: Preprocesses the initial data.
 - `Producer.py`: Ingests data into Kafka topics from a JSON formatted file.
 - `consumer1_Apriori.py`: Processes the streamed data to compute frequent itemsets using the sliding apriori algorithm
