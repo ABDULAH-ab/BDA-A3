@@ -62,6 +62,6 @@ The project is designed to demonstrate a seamless flow of data from Kafka to Mon
 
 
 ### Contributors
+- *Shazer Nadeem* || i222043
 - *Abdullah* || i221879
 - *Saim Nadeem* || i221884
-- *Shazer Nadeem* || i222043
